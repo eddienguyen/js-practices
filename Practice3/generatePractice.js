@@ -10,7 +10,12 @@
       })
     ); // Remove this line and change to your own algorithm
   }*/
- 
+
+//create random number
+const min = -10000, max = 10000;
+function randomInt(min, max){
+  return Math.floor(Math.random()* (max - min + 1) + min);
+}
 
  function generate(testLengthArray){
   let outputArray =  testLengthArray.map(fatherArrayItem => ({    //each fatherArrayItem = fatherArr
@@ -48,21 +53,9 @@
 
 module.exports = generate
 
-//test:
+//TEST-ONLY:
 
 const test = [95,25,46,24,36,15,63,31,87,35,75,36,57,35,75];
-//create random number
-const min = -10000, max = 10000;
-function randomInt(min, max){
-  return Math.floor(Math.random()* (max - min + 1) + min);
-}
-
-//Create an array of random numbers
-/*
-var generateSmallArray = (testArray) => {
-  return Array.from({length: testArray.length}).map(item => randomInt(min,max)); 
-}
-*/
 
 //grandFatherArray
 function generateGrandFatherArray(testArray){
@@ -98,26 +91,3 @@ function generateGrandFatherArray(testArray){
 }
 
 // console.log(generateGrandFatherArray(test));
-
-//sort with bubblesort
-// function sort(input) {
-//   var swapped = true;
-//   var temp, j =0;
-  
-//   while(swapped){
-//     swapped = false;
-//     j++;
-//     for(let i = 0; i < input.length-j; i++){
-//       if(input[i] > input[i+1]){
-//         //swap without using additional variabe
-//         input[i] = (input[i] + input[i+1]);
-//         input[i+1] = input[i] - input[i+1];
-//         input[i] = input[i] - input[i+1];
-//         swapped = true;
-//       }
-//     }
-//   }
-//   return input;
-
-//   // return input.sort((a,b) => a-b); // shortcut
-// }
