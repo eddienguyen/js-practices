@@ -32,13 +32,13 @@ function randomInt(min, max){
   let outputArrayWithTarget = arrayWithInput.map(item => ({
     input : item.input,
     target : item.input[randomInt(0,item.input.length)],
-    output: item.output
+    output: item.input.indexOf(item.target)
   }) 
     
   );
 
   //find output
-  let completedArray = outputArrayWithTarget.map(item => ({
+  let completedArray = arrayWithInput.map(item => ({
     input : item.input,
     target : item.target,
     output: item.input.indexOf(item.target)
